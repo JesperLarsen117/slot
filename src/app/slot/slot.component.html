@@ -1,0 +1,15 @@
+<h1>Slot</h1>
+<main>
+  <section class="container">
+    <section class="game-container">
+      <section [class]="activeSpin ? 'game spining' : 'game default'">
+        <div class="symbols" *ngFor="let item of SymbolHolder">
+          <img *ngIf="item" src="{{ item.symbol }}" alt="symbol" />
+        </div>
+      </section>
+    </section>
+    <section class="button-container">
+      <button [disabled]="activeSpin" (click)="spin()">Spin</button>
+    </section>
+  </section>
+</main>

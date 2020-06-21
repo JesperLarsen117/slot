@@ -1,0 +1,93 @@
+h1 {
+  margin: 1em;
+  font-size: 3em;
+  font-family: cursive;
+  text-align: center;
+}
+
+main {
+  width: 500px;
+  margin: 0 auto;
+
+  .container {
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.3);
+
+    .game-container {
+      overflow: hidden;
+      height: 410px;
+      width: 500px;
+      background-color: rgb(54, 50, 50);
+      border: 4px solid gold;
+
+      .game {
+        transform: translateY(calc(-100% + 415px));
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        justify-items: center;
+        align-items: center;
+
+        img {
+          width: 100px;
+          height: 100px;
+        }
+      }
+
+      .spining {
+        animation: spin 3s ease-in-out forwards;
+      }
+
+      .default {
+        transform: translateY(0);
+      }
+    }
+
+    .button-container {
+      width: 100%;
+
+      button {
+        width: 100%;
+        padding: 1em;
+        background-color: #007e00;
+        color: white;
+        cursor: pointer;
+        transition: all 300ms ease-in-out;
+
+        &:disabled {
+          opacity: .5;
+          cursor: unset;
+        }
+
+        &:hover {
+          box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.2);
+        }
+      }
+    }
+
+  }
+}
+
+
+@keyframes spin {
+  0% {
+    transform: translateY(calc(-100% + 415px));
+    filter: blur(1px);
+  }
+
+  50% {
+    filter: blur(3px);
+  }
+
+  80% {
+    transform: scale(1);
+  }
+
+  90% {
+    transform: scale(1.005);
+  }
+
+  100% {
+    filter: blur(0);
+    transform: translateY(0);
+    transform: scale(1);
+  }
+}
