@@ -5,6 +5,18 @@ h1 {
   text-align: center;
 }
 
+.allSymbols {
+  width: 70%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+
+  img {
+    width: 80px;
+    height: 80px;
+  }
+}
+
 main {
   width: 500px;
   margin: 0 auto;
@@ -13,7 +25,7 @@ main {
     box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.3);
 
     .game-container {
-      overflow: hidden;
+      // overflow: hidden;
       height: 410px;
       width: 500px;
       background-color: rgb(54, 50, 50);
@@ -45,12 +57,14 @@ main {
       width: 100%;
 
       button {
+        position: relative;
         width: 100%;
         padding: 1em;
         background-color: #007e00;
         color: white;
         cursor: pointer;
         transition: all 300ms ease-in-out;
+        z-index: 201203102301;
 
         &:disabled {
           opacity: .5;
@@ -90,4 +104,9 @@ main {
     transform: translateY(0);
     transform: scale(1);
   }
+}
+
+
+.winner {
+  border: 2px solid green;
 }

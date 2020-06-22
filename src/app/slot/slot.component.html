@@ -1,9 +1,17 @@
 <h1>Slot</h1>
+<section class="allSymbols">
+  <div *ngFor="let item of symbols">
+    <p>{{item.name}}</p>
+    <p>{{item.value}}</p>
+    <img *ngIf="item" src="{{ item.symbol }}" alt="symbol" />
+  </div>
+</section>
 <main>
   <section class="container">
     <section class="game-container">
       <section [class]="activeSpin ? 'game spining' : 'game default'">
-        <div class="symbols" *ngFor="let item of SymbolHolder">
+        <div class="symbols row1" *ngFor="let item of SymbolHolder; let i = index">
+          <!-- <p style="color: white; text-align: center;">{{i}}</p> -->
           <img *ngIf="item" src="{{ item.symbol }}" alt="symbol" />
         </div>
       </section>
