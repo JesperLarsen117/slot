@@ -1,14 +1,19 @@
-<h1>Slot</h1>
 <section class="allSymbols">
   <div *ngFor="let item of symbols">
     <p>{{item.name}}</p>
     <p>{{item.value}}</p>
+    <p>{{item.winRate}}</p>
     <img *ngIf="item" src="{{ item.symbol }}" alt="symbol" />
   </div>
 </section>
 <main>
   <section class="container">
     <section class="game-container">
+      <div id="line-container">
+        <div>
+          <!-- <img id="line" *ngIf="winnerLines" id="line" src="../../assets/images/lines/line1.svg" alt="" /> -->
+        </div>
+      </div>
       <section [class]="activeSpin ? 'game spining' : 'game default'">
         <div class="symbols row1" *ngFor="let item of SymbolHolder; let i = index">
           <!-- <p style="color: white; text-align: center;">{{i}}</p> -->
@@ -19,6 +24,8 @@
     <section class="button-container">
       <button [disabled]="activeSpin" (click)="spin()">Spin</button>
       <audio id="audio" src="../../assets/sounds/spin.mp3"></audio>
+      <audio id="win" src="../../assets/sounds/win.mp3"></audio>
+      <audio id="nowin" src="../../assets/sounds/nowin.mp3"></audio>
     </section>
   </section>
 </main>

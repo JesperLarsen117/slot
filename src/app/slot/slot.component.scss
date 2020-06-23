@@ -18,18 +18,30 @@ h1 {
 }
 
 main {
-  width: 500px;
-  margin: 0 auto;
+  background-image: url(../../assets/images/graphics/background.png);
+  position: relative;
+  width: 1200px;
+  height: 800px;
+  margin: 2em auto;
+  // box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.3);
 
   .container {
-    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: red;
+    width: 500px;
+    // margin: 0 auto;
 
     .game-container {
-      // overflow: hidden;
+      position: relative;
+      overflow: hidden;
       height: 410px;
       width: 500px;
+      margin: 0 auto;
       background-color: rgb(54, 50, 50);
-      border: 4px solid gold;
+      // border: 4px solid gold;
 
       .game {
         transform: translateY(calc(-100% + 415px));
@@ -57,10 +69,15 @@ main {
       width: 100%;
 
       button {
-        position: relative;
-        width: 100%;
-        padding: 1em;
-        background-color: #007e00;
+        position: absolute;
+        margin-top: 1em;
+        padding: 1em 2em;
+        outline: unset;
+        left: 50%;
+        transform: translateX(-50%);
+        // background-color: #007e00;
+        background-color: unset;
+        border-radius: 200px;
         color: white;
         cursor: pointer;
         transition: all 300ms ease-in-out;
@@ -106,7 +123,34 @@ main {
   }
 }
 
+#line-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
 
-.winner {
-  border: 2px solid green;
+.line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  animation: lineAnim 2s ease-in-out forwards;
+}
+
+
+@keyframes lineAnim {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
 }
